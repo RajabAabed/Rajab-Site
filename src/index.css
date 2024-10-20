@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Lufga";
+  src: url("/assets/fonts/LufgaLight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lufga";
+  src: url("/assets/fonts/LufgaRegular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lufga";
+  src: url("/assets/fonts/LufgaMedium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("/assets/fonts/LufgaSemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lufga";
+  src: url("/assets/fonts/LufgaBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+html,
+body {
+  @apply transition-colors duration-700;
+}
+@keyframes scaleUp {
+  0% {
+    width: 1px;
+    height: 1px;
+    bottom: 0;
+  }
+  100% {
+    width: 750px;
+    height: 750px;
+    bottom: -375px;
+  }
+}
+
+.animated-circle {
+  @apply z-10 bg-primary-300 dark:bg-primary-500 rounded-full absolute left-1/2 transform -translate-x-1/2;
+  animation: scaleUp 1.5s ease-in-out forwards;
+}
+ul.splide__pagination {
+  bottom: -30px;
+}
+
+button.splide__pagination__page.is-active {
+  @apply bg-primary-500;
+}
+
+.splide__pagination__page {
+  @apply bg-neutral-500;
+  margin: 4px;
+  height: 9px;
+  width: 9px;
+}
