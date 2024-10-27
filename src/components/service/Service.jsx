@@ -8,7 +8,7 @@ export default function Service() {
       name="service"
       className="relative py-24 rounded-[50px] mx-auto px-4 sm:px-6 lg:px-32"
     >
-      <div className="rounded-[50px] absolute inset-0 bg-[url('/assets/images/service-bg.png')] bg-center bg-no-repeat bg-cover opacity-80 z-[-1]"></div>
+      <div className="rounded-[50px] absolute inset-0 bg-[url('/assets/images/service-bg.webp')] bg-center bg-no-repeat bg-cover opacity-80 z-[-1]"></div>
       <div className="rounded-[50px] absolute inset-0 bg-[#171717] opacity-90 z-[-1]"></div>
       <Parallax />
       <div className="flex w-full justify-between sm:flex-row flex-col">

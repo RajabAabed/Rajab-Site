@@ -27,7 +27,7 @@ export default function Parallax() {
     <animated.div
       style={{
         ...springProps,
-        backgroundImage: `url('/dist/assets/images/property.png')`,
+        backgroundImage: `url('/assets/images/property.webp')`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: `${springProps.backgroundPositionX.to(

@@ -1,3 +1,4 @@
+import LazyloadIamge from "../lazyload/LazyloadImage";
 import NavBar from "./components/NavBar";
 import ThemeToggle from "./components/ThemeToggle";
 import logo from "/assets/images/logo.svg";
@@ -12,12 +13,20 @@ export default function Header() {
               href="#"
               aria-label="RajabAabed"
             >
-              <img src={logo} alt="logo" className="w-[70px] p-1 box-border" />
+              <LazyloadIamge
+                imageScr={logo}
+                imageAlt="logo"
+                classes="w-[70px] p-1 box-border"
+              />
             </a>
           </div>
 
           <div className="md:hidden flex items-center">
-            <ThemeToggle customStyle="me-3" width={45} height={45} />
+            <ThemeToggle
+              customStyle="me-3"
+              width={45}
+              height={45}
+            />
             <button
               type="button"
               className="hs-collapse-toggle flex justify-center items-center size-11 border border-gray-200 text-gray-500 rounded-full hover:bg-gray-200 focus:outline-none focus:bg-gray-200 dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
@@ -39,9 +48,24 @@ export default function Header() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <line x1="3" x2="21" y1="6" y2="6" />
-                <line x1="3" x2="21" y1="12" y2="12" />
-                <line x1="3" x2="21" y1="18" y2="18" />
+                <line
+                  x1="3"
+                  x2="21"
+                  y1="6"
+                  y2="6"
+                />
+                <line
+                  x1="3"
+                  x2="21"
+                  y1="12"
+                  y2="12"
+                />
+                <line
+                  x1="3"
+                  x2="21"
+                  y1="18"
+                  y2="18"
+                />
               </svg>
               <svg
                 className="hs-collapse-open:block hidden shrink-0 size-4"
@@ -62,7 +86,11 @@ export default function Header() {
           </div>
         </div>
         <NavBar />
-        <ThemeToggle customStyle="hidden md:flex" width={35} height={35} />
+        <ThemeToggle
+          customStyle="hidden md:flex"
+          width={35}
+          height={35}
+        />
       </nav>
     </header>
   );

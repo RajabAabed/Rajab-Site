@@ -1,5 +1,6 @@
 import hireImage from "../../assets/images/hire.gif";
 import { Link } from "react-scroll";
+import LazyloadIamge from "../lazyload/LazyloadImage";
 export default function Hire() {
   return (
     <section className="relative overflow-hidden py-16 rounded-[50px] mx-auto px-4 sm:px-6 lg:px-32 bg-[#F2F4F7] dark:bg-neutral-950 ">
@@ -94,7 +95,11 @@ export default function Hire() {
       </svg>
       <div className="grid grid-cols-1 sm:grid-cols-5 gap-3 relative z-10">
         <div className=" col-span-2">
-          <img src={hireImage} alt="" />
+          <LazyloadIamge
+            imageScr={hireImage}
+            imageAlt="hire Image"
+            classes=""
+          />
         </div>
         <div className=" col-span-3 pt-10 px-10">
           <h2 className="text-5xl text-[#344054] dark:text-neutral-200 font-semibold font-Lufga">

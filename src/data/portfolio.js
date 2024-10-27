@@ -1,9 +1,9 @@
-import portfolio1Image from "../assets/images/portfolio1.png";
-import portfolio2Image from "../assets/images/portfolio2.png";
-import portfolio3Image from "../assets/images/portfolio3.png";
-import portfolio4Image from "../assets/images/portfolio4.png";
-import portfolio5Image from "../assets/images/portfolio5.png";
-import portfolio6Image from "../assets/images/portfolio6.png";
+import portfolio1Image from "../assets/images/portfolio1.webp";
+import portfolio2Image from "../assets/images/portfolio2.webp";
+import portfolio3Image from "../assets/images/portfolio3.webp";
+import portfolio4Image from "../assets/images/portfolio4.webp";
+import portfolio5Image from "../assets/images/portfolio5.webp";
+import portfolio6Image from "../assets/images/portfolio6.webp";
 
 const portfolioItems = [
   {

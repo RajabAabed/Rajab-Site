@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { HiMiniStar } from "react-icons/hi2";
 import { FaQuoteLeft } from "react-icons/fa6";
+import LazyloadIamge from "../../lazyload/LazyloadImage";
 
 export default function TestimonialCard({ name, jobTitle, avatar, review }) {
   return (
@@ -9,11 +10,11 @@ export default function TestimonialCard({ name, jobTitle, avatar, review }) {
         <div className="w-1/2">
           <div className="flex flex-row justify-start items-start w-full ">
             <div className="w-12 mr-3">
-              <img
-                className="inline-block size-[46px] rounded-full"
-                src={avatar}
-                alt="Avatar"
-              ></img>
+              <LazyloadIamge
+                imageScr={avatar}
+                imageAlt="Avatar"
+                classes="inline-block size-[46px] rounded-full"
+              />
             </div>
             <div className="w-/12">
               <h4 className="text-lg text-white font-Lufga font-medium mb-0 leading-4">
@@ -26,7 +27,10 @@ export default function TestimonialCard({ name, jobTitle, avatar, review }) {
           </div>
           <div className="flex flex-row justify-start mt-3">
             {[...Array(5)].map((_, i) => (
-              <HiMiniStar key={i} className="text-primary-500 text-2xl" />
+              <HiMiniStar
+                key={i}
+                className="text-primary-500 text-2xl"
+              />
             ))}
             <span className="text-xl text-white font-Lufga font-medium ms-2">
               5.0

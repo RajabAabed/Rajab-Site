@@ -42,7 +42,7 @@ export default function Testimonial() {
       name="testimonial"
       className="relative py-24 rounded-[50px] mx-auto "
     >
-      <div className="rounded-[50px] absolute inset-0 bg-[url('/assets/images/service-bg.png')] bg-center bg-no-repeat bg-cover opacity-80 z-[-1]"></div>
+      <div className="rounded-[50px] absolute inset-0 bg-[url('/assets/images/service-bg.webp')] bg-center bg-no-repeat bg-cover opacity-80 z-[-1]"></div>
       <div className="rounded-[50px] absolute inset-0 bg-[#171717] opacity-90 z-[-1]"></div>
 
       <div className="">

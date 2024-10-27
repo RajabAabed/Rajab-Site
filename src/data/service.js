@@ -1,6 +1,6 @@
-import consultingIamge from "../assets/images/consulting.jpg";
-import reactImage from "../assets/images/react.png";
-import wordpressImage from "../assets/images/wordpress.png";
+import consultingIamge from "../assets/images/consulting.webp";
+import reactImage from "../assets/images/react.webp";
+import wordpressImage from "../assets/images/wordpress.webp";
 
 let services = [
   {
