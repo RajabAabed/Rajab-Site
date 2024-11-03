@@ -4,12 +4,14 @@ import Hero from "./components/hero/Hero";
 import Hire from "./components/hire/Hire";
 import Layout from "./components/layout/Layout";
 import Portfolio from "./components/portfolio/Portfolio";
+import SEO from "./components/seo/SEO";
 import Service from "./components/service/Service";
 import Testimonial from "./components/testimonial/Testimonial";
 
 export default function App() {
   return (
     <Layout>
+      <SEO />
       <Hero />
       <Service />
       <Experience />
