@@ -10,6 +10,11 @@ export default function SEO() {
         content="I'm Rajab Aabed, A Software Engineer"
       />
       <meta
+        property="og:type"
+        content="website"
+      />
+
+      <meta
         property="og:title"
         content="Rajab Aabed"
       />
@@ -18,15 +23,24 @@ export default function SEO() {
         content="I'm Rajab Aabed, A Software Engineer"
       />
       <meta
+        property="og:url"
+        content="https://www.rajababed.com/"
+      />
+      <meta
         property="og:image"
         content={logo}
+      />
+      <meta
+        property="og:locale"
+        content="en_US"
       />
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
           name: "Rajab Aabed",
-          url: "https://rajabaabed.netlify.app/",
+          url: "https://rajababed.com",
+          logo: { logo },
         })}
       </script>
     </Helmet>
