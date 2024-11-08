@@ -16,7 +16,7 @@ export default function Header() {
               <LazyloadIamge
                 imageScr={logo}
                 imageAlt="logo"
-                classes="w-[70px] p-1 box-border"
+                classes="sm:w-[70px] w-[45px] p-1 box-border"
               />
             </a>
           </div>
@@ -24,8 +24,8 @@ export default function Header() {
           <div className="md:hidden flex items-center">
             <ThemeToggle
               customStyle="me-3"
-              width={45}
-              height={45}
+              width={30}
+              height={30}
             />
             <button
               type="button"
