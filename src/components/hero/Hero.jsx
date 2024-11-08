@@ -26,7 +26,7 @@ export default function Hero() {
             </span>
           </h1>
         </div>
-        <div className="absolute sm:left-16 sm:top-2/4 z-20 top-[280px] left-7">
+        <div className="absolute sm:left-16 sm:top-2/4 z-20 top-[280px] left-7 sm:block hidden">
           <FaQuoteLeft className="text-secondary text-5xl dark:text-primary-400" />
 
           <p className="font-Lufga text-secondary dark:text-neutral-200 max-w-72 font-medium text-lg">
@@ -47,7 +47,10 @@ export default function Hero() {
         <div className="absolute right-16 top-2/4 z-20 sm:block hidden">
           <div className="flex flex-row justify-end">
             {[...Array(5)].map((_, i) => (
-              <HiMiniStar key={i} className="text-primary-500 text-2xl" />
+              <HiMiniStar
+                key={i}
+                className="text-primary-500 text-2xl"
+              />
             ))}
           </div>
           <p className="font-Lufga text-end text-3xl font-semibold text-text dark:text-neutral-200">

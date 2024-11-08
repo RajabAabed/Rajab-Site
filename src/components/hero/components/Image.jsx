@@ -23,7 +23,7 @@ export default function Image() {
           <animated.img
             src={rajab}
             alt="Rajab"
-            className="lg:w-[26%] md:w-3/5  w-full m-auto"
+            className="lg:w-[26%] md:w-3/5   m-auto"
             style={propsStyle}
           />
         </LazyLoad>
