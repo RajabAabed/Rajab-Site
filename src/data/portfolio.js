@@ -4,6 +4,7 @@ import portfolio3Image from "../assets/images/portfolio3.webp";
 import portfolio4Image from "../assets/images/portfolio4.webp";
 import portfolio5Image from "../assets/images/portfolio5.webp";
 import portfolio6Image from "../assets/images/portfolio6.webp";
+import portfolio7Image from "../assets/images/portfolio7.webp";
 
 const portfolioItems = [
   {
@@ -40,6 +41,12 @@ const portfolioItems = [
     id: 5,
     title: "Allmaie Studio",
     coverImage: portfolio6Image,
+    skills: ["html", "css", "Js", "Wordpress"],
+  },
+  {
+    id: 5,
+    title: "Ybrands Perfume",
+    coverImage: portfolio7Image,
     skills: ["html", "css", "Js", "Wordpress"],
   },
 ];
