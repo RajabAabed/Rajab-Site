@@ -64,14 +64,14 @@ let experiences = [
     description: `
       <ul class="list-disc ps-6">
         <li>WordPress websites development.</li>
-        <li>Developing online stores using woocommerce.</li>
+        <li>Developing online stores using Woocommerce.</li>
         <li>Solve software problems by creating custom plugins.</li>
       </ul>
     `,
   },
   {
     id: 6,
-    title: "Freelancing Mentor",
+    title: "Freelance Mentor",
     startDate: "Oct 2020",
     endDate: "Aug 2022",
     company: "Gaza Sky Geeks",
