@@ -1,15 +1,15 @@
 let experiences = [
   {
     id: 1,
-    title: "Web Development Instructor",
-    startDate: "Sep 2023",
+    title: "Full Stack Developer",
+    startDate: "Mar 2025",
     endDate: "Present",
-    company: "Amideast",
+    company: "Consultera",
     description: `
       <ul class="list-disc ps-6">
-        <li>Mentor and instructor in a technical training program at Amideast.</li>
-        <li>One Group of Web development (Front-End).</li>
-        <li>Creating a full Syllabus, Slides presentations (including exercises and assignments), and schedule appropriate.</li>
+        <li>Developing Full-Stack web applications using Next.js, React.js, and WordPress.</li>
+        <li>Converting Figma and XD design to HTML, CSS, and JS.</li>
+        <li>Solve software problems.</li>
       </ul>
     `,
   },
@@ -29,6 +29,20 @@ let experiences = [
   },
   {
     id: 3,
+    title: "Web Development Instructor",
+    startDate: "Sep 2023",
+    endDate: "Sep 2024",
+    company: "Amideast",
+    description: `
+      <ul class="list-disc ps-6">
+        <li>Mentor and instructor in a technical training program at Amideast.</li>
+        <li>One Group of Web development (Front-End).</li>
+        <li>Creating a full Syllabus, Slides presentations (including exercises and assignments), and schedule appropriate.</li>
+      </ul>
+    `,
+  },
+  {
+    id: 4,
     title: "Teacher Assistant",
     startDate: "Sep 2022",
     endDate: "Sep 2023",
@@ -42,7 +56,7 @@ let experiences = [
     `,
   },
   {
-    id: 4,
+    id: 5,
     title: "Wordpress Developer",
     startDate: "Jan 2021",
     endDate: "Feb 2023",
@@ -56,7 +70,7 @@ let experiences = [
     `,
   },
   {
-    id: 5,
+    id: 6,
     title: "Freelancing Mentor",
     startDate: "Oct 2020",
     endDate: "Aug 2022",
