@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.rajababed.com/sitemap.xml
+Sitemap: https://rajababed.com/sitemap.xml
