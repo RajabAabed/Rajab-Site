@@ -21,6 +21,41 @@
   font-weight: 500;
   font-display: swap;
 }
+/*
+ * Metric-matched fallbacks: system fonts scaled to the web fonts' width and vertical
+ * metrics, so swapping in the real font doesn't shift the hero (CLS). Values computed
+ * from the font files with fontTools. Liberation/Arimo/Tinos are the metric-compatible
+ * Arial/Times clones found on Linux and Android.
+ */
+@font-face {
+  font-family: "Lufga Fallback";
+  src: local("Arial"), local("ArialMT"), local("Liberation Sans"), local("Arimo");
+  font-weight: 100 499;
+  size-adjust: 108.2%;
+  ascent-override: 89.7%;
+  descent-override: 31%;
+  line-gap-override: 0%;
+}
+/* Medium is wider; tuned on the hero name, the largest Medium text above the fold */
+@font-face {
+  font-family: "Lufga Fallback";
+  src: local("Arial"), local("ArialMT"), local("Liberation Sans"), local("Arimo");
+  font-weight: 500 900;
+  size-adjust: 109.5%;
+  ascent-override: 87.96%;
+  descent-override: 30.37%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Instrument Serif Fallback";
+  src: local("Times New Roman Italic"), local("TimesNewRomanPS-ItalicMT"), local("Liberation Serif Italic"),
+    local("Tinos Italic");
+  font-style: italic;
+  size-adjust: 87.24%;
+  ascent-override: 113.49%;
+  descent-override: 35.54%;
+  line-gap-override: 0%;
+}
 @font-face {
   font-family: "Instrument Serif";
   src: url("/assets/fonts/InstrumentSerif-Italic.woff2") format("woff2");

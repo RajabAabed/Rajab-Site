@@ -11,8 +11,8 @@ export default {
         line: "rgba(237, 233, 226, 0.14)",
       },
       fontFamily: {
-        sans: ["Lufga", "ui-sans-serif", "system-ui", "sans-serif"],
-        serif: ['"Instrument Serif"', "ui-serif", "Georgia", "serif"],
+        sans: ["Lufga", '"Lufga Fallback"', "ui-sans-serif", "system-ui", "sans-serif"],
+        serif: ['"Instrument Serif"', '"Instrument Serif Fallback"', "ui-serif", "Georgia", "serif"],
       },
       spacing: {
         gutter: "var(--gutter)",
