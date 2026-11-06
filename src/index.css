@@ -2,70 +2,195 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Latin-subset WOFF2 builds of the original TTFs (~16 kB each instead of ~100 kB) */
 @font-face {
   font-family: "Lufga";
-  src: url("/assets/fonts/LufgaLight.ttf") format("truetype");
+  src: url("/assets/fonts/Lufga-Light.woff2") format("woff2");
   font-weight: 300;
-  font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Lufga";
-  src: url("/assets/fonts/LufgaRegular.ttf") format("truetype");
+  src: url("/assets/fonts/Lufga-Regular.woff2") format("woff2");
   font-weight: 400;
-  font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Lufga";
-  src: url("/assets/fonts/LufgaMedium.ttf") format("truetype");
+  src: url("/assets/fonts/Lufga-Medium.woff2") format("woff2");
   font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Lufga";
-  src: url("/assets/fonts/LufgaSemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-  font-family: "Lufga";
-  src: url("/assets/fonts/LufgaBold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
+  font-family: "Instrument Serif";
+  src: url("/assets/fonts/InstrumentSerif-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
 }
 
-html,
-body {
-  @apply transition-colors duration-700;
+:root {
+  --gutter: clamp(1rem, 3vw, 3rem);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
-@keyframes scaleUp {
-  0% {
-    width: 1px;
-    height: 1px;
-    bottom: 0;
+
+@layer base {
+  html {
+    @apply bg-ink text-bone antialiased;
+    text-rendering: optimizeLegibility;
   }
-  100% {
-    width: 750px;
-    height: 750px;
-    bottom: -375px;
+  body {
+    @apply bg-ink font-sans font-normal;
+    overflow-x: clip;
+  }
+  ::selection {
+    @apply bg-gold text-ink;
+  }
+  html.is-locked,
+  html.is-locked body {
+    overflow: hidden;
   }
 }
 
-.animated-circle {
-  @apply z-10 bg-primary-300 dark:bg-primary-500 rounded-full absolute left-1/2 transform -translate-x-1/2;
-  animation: scaleUp 1.5s ease-in-out forwards;
-}
-ul.splide__pagination {
-  bottom: -30px;
+@layer components {
+  .serif {
+    @apply font-serif italic;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  /* Two stacked copies of a label that roll upward on hover */
+  .roll {
+    display: inline-flex;
+    height: 1.2em;
+    overflow: hidden;
+    vertical-align: top;
+  }
+  .roll-inner {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.7s var(--ease-expo);
+  }
+  .roll-inner > span {
+    display: block;
+    line-height: 1.2em;
+  }
+  /* Hover-capable devices only: touch screens keep :hover "stuck" after a tap */
+  @media (hover: hover) {
+    a:hover .roll-inner,
+    button:hover .roll-inner,
+    .group:hover .roll-inner {
+      transform: translateY(-50%);
+    }
+  }
+
+  .field {
+    @apply w-full rounded-none border-0 border-b border-line bg-transparent px-0 py-4 text-lg text-bone outline-none transition-colors duration-500 placeholder:text-mute/50 md:text-xl;
+  }
 }
 
-button.splide__pagination__page.is-active {
-  @apply bg-primary-500;
+/* Custom cursor (fine pointers only) */
+@media (pointer: fine) {
+  html.has-cursor,
+  html.has-cursor a,
+  html.has-cursor button {
+    cursor: none;
+  }
+}
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 70;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+.cursor-ball {
+  display: grid;
+  place-items: center;
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  background: #ede9e2;
+  transition: transform 0.6s var(--ease-expo), opacity 0.3s;
+}
+.cursor[data-state="hover"] .cursor-ball {
+  transform: scale(4);
+}
+.cursor[data-state="hidden"] .cursor-ball,
+.cursor[data-state="out"] .cursor-ball {
+  transform: scale(0);
 }
 
-.splide__pagination__page {
-  @apply bg-neutral-500;
-  margin: 4px;
-  height: 9px;
-  width: 9px;
+.split-line {
+  padding-bottom: 0.06em;
+  margin-bottom: -0.06em;
+}
+
+/*
+ * Below-the-fold sections skip layout and paint on first load, which is otherwise the
+ * single most expensive task on mobile. Rendering resumes on first interaction.
+ */
+html:not(.is-engaged) .defer-render {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 1000px;
+}
+
+/*
+ * The header inverts over light surfaces. Blending a fixed layer over the whole page is
+ * costly to composite without a GPU and delayed the first frame by ~1.5s, so it is
+ * enabled on first interaction; until then the header only sits over the dark hero.
+ */
+html.is-engaged .header-blend {
+  mix-blend-mode: difference;
+}
+
+/*
+ * Intro choreography lives in CSS so it starts with the first paint of the
+ * prerendered HTML instead of waiting for JavaScript to download and hydrate.
+ */
+/*
+ * Letters rise from below, so only the bottom edge needs clipping. clip-path leaves the
+ * top and sides open and sets the floor just under the j's descender (~0.08em below
+ * the line box). The hero rule below sits lower than that floor at every width.
+ * (overflow-based masks crop glyphs in some browsers: they shift the baseline.)
+ */
+.hero-mask {
+  display: inline-block;
+  vertical-align: top;
+  clip-path: inset(-1em -0.5em -0.12em -0.5em);
+}
+.hero-char {
+  display: inline-block;
+  animation: hero-rise 1.1s var(--ease-expo) both;
+  animation-delay: calc(0.05s + var(--i) * 0.035s);
+}
+.hero-fade {
+  animation: hero-fade 1s var(--ease-expo) both;
+  animation-delay: calc(0.25s + var(--d, 0) * 0.06s);
+}
+.hero-rule {
+  transform-origin: left;
+  animation: hero-rule 1.2s cubic-bezier(0.87, 0, 0.13, 1) 0.05s both;
+}
+@keyframes hero-rise {
+  /* Ascenders reach ~0.2em above the 0.86em box; 145% puts them under the clip floor */
+  from { transform: translateY(145%); }
+  to { transform: none; }
+}
+@keyframes hero-fade {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes hero-rule {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-char,
+  .hero-fade,
+  .hero-rule {
+    animation: none;
+  }
 }

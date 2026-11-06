@@ -1,36 +1,26 @@
 /** @type {import('tailwindcss').Config} */
-import tailwindForms from "@tailwindcss/forms";
-import prelinePlugin from "preline/plugin";
 export default {
-  darkMode: "class",
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "node_modules/preline/dist/*.js",
-    "./node_modules/preline/preline.js",
-  ],
+  content: ["./index.html", "./src/**/*.{js,jsx}"],
   theme: {
     extend: {
-      fontFamily: {
-        Lufga: ["Lufga", "sans-serif"],
-      },
       colors: {
-        primary: {
-          100: "#ffe7d6",
-          200: "#ffcead",
-          300: "#ffb585",
-          400: "#ff9c5c",
-          500: "#FD853A", // Base color
-          600: "#e67434",
-          700: "#cc652e",
-          800: "#b25628",
-          900: "#994822",
-        },
-        secondary: "#1D2939",
-        text: "#171717",
+        ink: { DEFAULT: "#0B0B0A", 2: "#131311" },
+        bone: "#EDE9E2",
+        mute: "#8D877E",
+        gold: "#D4B88A",
+        line: "rgba(237, 233, 226, 0.14)",
+      },
+      fontFamily: {
+        sans: ["Lufga", "ui-sans-serif", "system-ui", "sans-serif"],
+        serif: ['"Instrument Serif"', "ui-serif", "Georgia", "serif"],
+      },
+      spacing: {
+        gutter: "var(--gutter)",
+      },
+      transitionTimingFunction: {
+        expo: "cubic-bezier(0.16, 1, 0.3, 1)",
       },
     },
   },
-
-  plugins: [tailwindForms, prelinePlugin],
+  plugins: [],
 };

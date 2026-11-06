@@ -7,47 +7,13 @@ import portfolio6Image from "../assets/images/portfolio6.webp";
 import portfolio7Image from "../assets/images/portfolio7.webp";
 
 const portfolioItems = [
-  {
-    id: 1,
-    title: "Sahmm",
-    coverImage: portfolio1Image,
-    skills: ["html", "css", "Js", "ReactJS"],
-  },
-  {
-    id: 2,
-    title: "Ikrusher",
-    coverImage: portfolio2Image,
-    skills: ["html", "css", "Js", "ReactJS"],
-  },
-  {
-    id: 3,
-    title: "LionX",
-    coverImage: portfolio3Image,
-    skills: ["html", "css", "Js", "Wordpress"],
-  },
-  {
-    id: 4,
-    title: "Perfume",
-    coverImage: portfolio4Image,
-    skills: ["html", "css", "Js", "Wordpress"],
-  },
-  {
-    id: 5,
-    title: "Nanco",
-    coverImage: portfolio5Image,
-    skills: ["html", "css", "Js", "ReactJS"],
-  },
-  {
-    id: 5,
-    title: "Allmaie Studio",
-    coverImage: portfolio6Image,
-    skills: ["html", "css", "Js", "Wordpress"],
-  },
-  {
-    id: 5,
-    title: "Ybrands Perfume",
-    coverImage: portfolio7Image,
-    skills: ["html", "css", "Js", "Wordpress"],
-  },
+  { id: 1, title: "Sahmm", coverImage: portfolio1Image, stack: ["React", "JavaScript"] },
+  { id: 2, title: "Ikrusher", coverImage: portfolio2Image, stack: ["React", "JavaScript"] },
+  { id: 3, title: "LionX", coverImage: portfolio3Image, stack: ["WordPress", "PHP"] },
+  { id: 4, title: "Perfume", coverImage: portfolio4Image, stack: ["WordPress", "WooCommerce"] },
+  { id: 5, title: "Nanco", coverImage: portfolio5Image, stack: ["React", "JavaScript"] },
+  { id: 6, title: "Allmaie Studio", coverImage: portfolio6Image, stack: ["WordPress", "PHP"] },
+  { id: 7, title: "Ybrands Perfume", coverImage: portfolio7Image, stack: ["WordPress", "WooCommerce"] },
 ];
+
 export default portfolioItems;

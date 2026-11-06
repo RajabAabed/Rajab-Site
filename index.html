@@ -1,35 +1,106 @@
-<!DOCTYPE html>
-<html lang="en" class="">
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="/assets/images/favicon-48x48.png"
-      sizes="48x48"
-    />
-    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rajab Aabed</title>
-  </head>
-  <!-- Google tag (gtag.js) -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-7JV3C2082N"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
+    <meta name="theme-color" content="#0B0B0A" />
+    <meta name="color-scheme" content="dark" />
 
-    gtag("config", "G-7JV3C2082N");
-  </script>
-  <body class="bg-white dark:bg-neutral-900">
-    <div id="root"></div>
+    <title>Rajab Aabed — Full-Stack Software Engineer</title>
+    <meta
+      name="description"
+      content="Rajab Aabed is a full-stack software engineer building fast, considered web experiences with React, Next.js and Node.js. 6+ years, 40+ projects delivered."
+    />
+    <meta name="author" content="Rajab Aabed" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://www.rajababed.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Rajab Aabed" />
+    <meta property="og:title" content="Rajab Aabed — Full-Stack Software Engineer" />
+    <meta
+      property="og:description"
+      content="Full-stack software engineer building fast, considered web experiences with React, Next.js and Node.js."
+    />
+    <meta property="og:url" content="https://www.rajababed.com/" />
+    <meta property="og:image" content="https://www.rajababed.com/assets/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Rajab Aabed — Full-Stack Software Engineer" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Rajab Aabed — Full-Stack Software Engineer" />
+    <meta
+      name="twitter:description"
+      content="Full-stack software engineer building fast, considered web experiences with React, Next.js and Node.js."
+    />
+    <meta name="twitter:image" content="https://www.rajababed.com/assets/images/og-image.jpg" />
+
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48x48.png" />
+
+    <link rel="preload" href="/assets/fonts/Lufga-Medium.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/Lufga-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/InstrumentSerif-Italic.woff2" as="font" type="font/woff2" crossorigin />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://www.rajababed.com/#person",
+            "name": "Rajab Aabed",
+            "jobTitle": "Full-Stack Software Engineer",
+            "url": "https://www.rajababed.com/",
+            "email": "mailto:rajab7abed@gmail.com",
+            "knowsAbout": ["React", "Next.js", "Node.js", "JavaScript", "REST APIs"],
+            "sameAs": ["https://www.linkedin.com/in/rajabaabed/", "https://github.com/RajabAabed"]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.rajababed.com/#website",
+            "url": "https://www.rajababed.com/",
+            "name": "Rajab Aabed",
+            "publisher": { "@id": "https://www.rajababed.com/#person" }
+          }
+        ]
+      }
+    </script>
+
+    <!-- Google tag: the queue is ready immediately, the library loads after first interaction or idle -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-7JV3C2082N");
+      (function () {
+        var loaded = false;
+        var events = ["pointerdown", "keydown", "scroll", "touchstart"];
+        function load() {
+          if (loaded) return;
+          loaded = true;
+          events.forEach(function (e) {
+            removeEventListener(e, load);
+          });
+          var s = document.createElement("script");
+          s.async = true;
+          s.src = "https://www.googletagmanager.com/gtag/js?id=G-7JV3C2082N";
+          document.head.appendChild(s);
+        }
+        events.forEach(function (e) {
+          addEventListener(e, load, { once: true, passive: true });
+        });
+        addEventListener("load", function () {
+          setTimeout(load, 10000);
+        });
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"><!--app-html--></div>
     <script type="module" src="/src/main.jsx"></script>
-    <script src="./node_modules/preline/dist/preline.js" type="module"></script>
   </body>
 </html>
